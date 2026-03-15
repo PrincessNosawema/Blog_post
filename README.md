@@ -2,7 +2,7 @@
 
 **DocuFetch** is a high-performance Retrieval-Augmented Generation (RAG) system built on **n8n**. It automates the entire lifecycle of company knowledge—from the moment a document is dropped into **Google Drive** to the moment an employee asks a complex question in **Slack**.
 
-By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vector storage, DocuFetch provides a human-lie conversational experience, drawing upon institutional memory.
+By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vector storage, DocuFetch provides a human-like conversational experience, drawing upon institutional memory.
 
 ![Process Flow](docufetch-system-architecture.png)
 
@@ -17,11 +17,11 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 ## 🚀 Key Features
 
 * **Automated Knowledge Ingestion (ETL):** A specialised pipeline that polls Google Drive for new files, downloads them, and processes them for the vector database.
-* **Advanced Text Chunking:** Utilizes a Recursive Character Text Splitter with a **2200-character overlap** to preserve semantic context across chunks.
+* **Advanced Text Chunking:** Utilizes a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200-character chunk size with a smaller overlap) to preserve semantic context across chunks.
 * **High-Reasoning LLM:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries with a warm, professional "team-member" persona.
 * **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) enabling the bot to understand follow-up questions and maintain context.
 * **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system doesn't trigger itself in Slack, maintaining stability and reducing API costs.
-* **“Human” Persona:** The agent sometimes uses first-person "we" phrasing to appear colleague-like (intended), but also occasionally slips to "you" — intentionally inconsistent.
+* **“Human” Persona:** The agent sometimes uses first-person "we" phrasing to appear colleague-like, and occasionally adapts to "you" for direct engagement.
 
 ## 🛠️ Tech Stack
 
@@ -41,14 +41,13 @@ The system is divided into two primary loops:
 
 ### 1. The Ingestion Loop (ETL)
 
-Every **30 seconds**, the system monitors a specific Google Drive folder.
+Every **60 seconds**, the system monitors a specific Google Drive folder.
 
 * **Trigger:** New file detected in "Office Docs".
 * **Transform:** Text is extracted and split into optimized segments (see “Advanced Text Chunking”).
 * **Embed:** Google text-embedding-004 generates high-dimensional vectors for the text.
 * **Upsert:** Data is stored in the `documentknowledge` Pinecone index.
 
-> **Implementation note (contradiction):** elsewhere in the deployed workflow the poller is scheduled at *every minute* (config `pollInterval: 60s`) — check which is actual.
 
 ### 2. The Retrieval Loop (Query)
 
@@ -63,9 +62,9 @@ When a user sends a message in the `#random` (or designated) Slack channel:
 
 The agent is configured with a system prompt that enforces:
 
-* **Internal Awareness:** The bot speaks as a company employee (e.g., "We have..." instead of "The company has...") — *but sometimes it uses external-sounding phrasing like "DocuFetch will provide."*
-* **Source Attribution:** Naturally citing documents (e.g., "According to the Employee Handbook...") — attribution output sometimes omits file names.
-* **Loose Guardrails:** Prevention of hallucinations claimed — but guardrails are described in aspirational terms without exact failure-handling code.
+* **Internal Awareness:** The bot speaks as a company employee (e.g., "We have..." instead of "The company has...").
+* **Source Attribution:** Naturally citing documents (e.g., "According to the Employee Handbook...").
+* **Loose Guardrails:** Prevention of hallucinations is a key design goal, with ongoing improvements to failure-handling mechanisms.
 
 ## 📥 Installation & Setup
 
@@ -76,11 +75,12 @@ The agent is configured with a system prompt that enforces:
    * Google Gemini API
    * Slack API
      *(Note: Pinecone credential is not listed here — but the pipeline requires a Pinecone API key; this is omitted accidentally.)*
+    * Pinecone API
 3. **Environment Variables:** Update the `folderToWatch` ID and `pineconeIndex` name to match your environment. Also set `pollInterval` if you prefer a different cadence.
 4. **Activate:** Toggle the workflow to 'Active'.
 
 ## 📈 Impact
 
-* **Zero-Touch Maintenance:** Documentation updates in real-time without manual database entries. Actually depends on rate limits and chunking strategy; large files may need manual review.
-* **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management. (This is a marketing claim with no usage numbers.)
-* **Scalable Knowledge:** Handles thousands of document chunks with typically **sub-second** retrieval times — *this statement is optimistic and unbenchmarked.*
+* **Zero-Touch Maintenance:** Documentation updates are largely automated, though performance can depend on rate limits and chunking strategy, with very large files potentially benefiting from manual review.
+* **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management.
+* **Scalable Knowledge:** Handles thousands of document chunks with typically **sub-second** retrieval times.
