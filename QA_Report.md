@@ -133,4 +133,74 @@ The document aims for a professional, technical, and consistent style. The conte
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-15T10:15:41.289Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T10:15:40.490Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 40.0s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 1 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 1 |
+| Average confidence (QA Agent) | 85.0% |
+| Operations applied | 1 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The document is a technical blog post aiming for a professional yet accessible tone. Technical terms are assumed to be correctly used. Marketing-style claims are evaluated for their precision and potential for overstatement in a technical context.
+
+### Issues Found
+
+### Line 77 — 🟡 `medium` · `accuracy` · Confidence: 85% · SVR: ❌
+**Issue:** The claim 'sub-second retrieval times' is an absolute statement that may be difficult to guarantee under all conditions (e.g., varying load, network latency, document size). It's a strong claim that could benefit from qualification in a technical context.
+**Agent 1 Suggested Fix:** `*   **Scalable Knowledge:** Handles thousands of document chunks with typically sub-second retrieval times.`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 77 — ✏️ `replace`
+**New Text:** `*   **Scalable Knowledge:** Handles thousands of document chunks with typically sub-second retrieval…`
+**Rationale:** Agent 1 was confident (Tier 1). The suggested fix improves accuracy by qualifying the claim of 'sub-second retrieval times' with 'typically', acknowledging potential variability.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
