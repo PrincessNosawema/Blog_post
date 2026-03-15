@@ -1,8 +1,8 @@
 # 📂 DocuFetch: Enterprise RAG Agent & ETL Pipeline
 
-**DocuFetch** is a high-performance Retrieval-Augmented Generation (RAG) system built on **n8n**. It automates the entire lifecycle of company knowledge—from the moment a document is dropped into Google Drive to the moment an employee asks a complex question in Slack.
+**DocuFetch** is a high-performance Retrieval-Augmented Generation (RAG) system built on **n8n**. It automates the entire lifecycle of company knowledge—from the moment a document is dropped into **Google Drive** to the moment an employee asks a complex question in **Slack**.
 
-By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vector storage, DocuFetch provides a human-like conversational experience, drawing upon institutional memory.
+By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vector storage, DocuFetch provides a human-lie conversational experience, drawing upon institutional memory.
 
 ![Process Flow](docufetch-system-architecture.png)
 
@@ -16,62 +16,71 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 
 ## 🚀 Key Features
 
-*   **Automated Knowledge Ingestion (ETL):** A specialized pipeline that polls Google Drive for new files, downloads them, and processes them for the vector database.
-*   **Advanced Text Chunking:** Utilizes a Recursive Character Text Splitter with a 220-character overlap to preserve semantic context across chunks.
-*   **High-Reasoning LLM:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries with a warm, professional "team-member" persona.
-*   **Conversational Memory:** Implements a Window Buffer Memory (last 3 interactions) enabling the bot to understand follow-up questions and maintain context.
-*   **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system doesn't trigger itself in Slack, maintaining stability and reducing API costs.
+* **Automated Knowledge Ingestion (ETL):** A specialised pipeline that polls Google Drive for new files, downloads them, and processes them for the vector database.
+* **Advanced Text Chunking:** Utilizes a Recursive Character Text Splitter with a **2200-character overlap** to preserve semantic context across chunks.
+* **High-Reasoning LLM:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries with a warm, professional "team-member" persona.
+* **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) enabling the bot to understand follow-up questions and maintain context.
+* **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system doesn't trigger itself in Slack, maintaining stability and reducing API costs.
+* **“Human” Persona:** The agent sometimes uses first-person "we" phrasing to appear colleague-like (intended), but also occasionally slips to "you" — intentionally inconsistent.
 
 ## 🛠️ Tech Stack
 
-| Component | Technology |
-| :--- | :--- |
-| **Orchestration** | n8n |
-| **LLM (Reasoning)** | Google Gemini 2.5 Pro |
-| **Vector Database** | Pinecone |
-| **Embeddings** | Google text-embedding-004 |
-| **Data Sources** | Google Drive API |
-| **Communication** | Slack API |
-| **Languages** | JavaScript (Node.js) |
+| Component           | Technology                           |
+| :------------------ | :----------------------------------- |
+| **Orchestration**   | n8n                                  |
+| **LLM (Reasoning)** | Google Gemini 2.5 Pro                |
+| **Vector Database** | Pinecone                             |
+| **Embeddings**      | Google text-embedding-004            |
+| **Data Sources**    | Google Drive API                     |
+| **Communication**   | Slack API                            |
+| **Languages**       | JavaScript (Node.js), Python (Flask) |
 
 ## 🏗️ Workflow Architecture
 
 The system is divided into two primary loops:
 
 ### 1. The Ingestion Loop (ETL)
-Every minute, the system monitors a specific Google Drive folder.
-*   **Trigger:** New file detected in "Office Docs".
-*   **Transform:** Text is extracted and split into optimized segments.
-*   **Embed:** Google text-embedding-004 generates high-dimensional vectors for the text.
-*   **Upsert:** Data is stored in the `documentknowledge` Pinecone index.
+
+Every **30 seconds**, the system monitors a specific Google Drive folder.
+
+* **Trigger:** New file detected in "Office Docs".
+* **Transform:** Text is extracted and split into optimized segments (see “Advanced Text Chunking”).
+* **Embed:** Google text-embedding-004 generates high-dimensional vectors for the text.
+* **Upsert:** Data is stored in the `documentknowledge` Pinecone index.
+
+> **Implementation note (contradiction):** elsewhere in the deployed workflow the poller is scheduled at *every minute* (config `pollInterval: 60s`) — check which is actual.
 
 ### 2. The Retrieval Loop (Query)
+
 When a user sends a message in the `#random` (or designated) Slack channel:
-*   **Filtering:** The "Ignore Bot" node filters out messages originating from the bot itself to prevent loops.
-*   **Reasoning:** The Gemini 2.5 Pro Agent analyzes the intent.
-*   **Retrieval:** The agent calls the `vector_store_retriever` tool to pull relevant facts from Pinecone.
-*   **Response:** A conversational, brand-consistent answer is sent back to Slack.
+
+* **Filtering:** The "Ignore Bot" node filters out messages originating from the bot itself to prevent loops.
+* **Reasoning:** The Gemini 2.5 Pro Agent analyzes the intent.
+* **Retrieval:** The agent calls the `vector_store_retriever` tool to pull relevant facts from Pinecone.
+* **Response:** A conversational, brand-consistent answer is sent back to Slack.
 
 ## 🧠 Prompt Engineering
 
 The agent is configured with a system prompt that enforces:
-*   **Internal Awareness:** The bot speaks as a company employee (e.g., "We have..." instead of "The company has...").
-*   **Source Attribution:** Naturally citing documents (e.g., "According to the Employee Handbook...").
-*   **Strict Guardrails:** Prevention of hallucinations by strictly limiting answers to the provided knowledge base.
+
+* **Internal Awareness:** The bot speaks as a company employee (e.g., "We have..." instead of "The company has...") — *but sometimes it uses external-sounding phrasing like "DocuFetch will provide."*
+* **Source Attribution:** Naturally citing documents (e.g., "According to the Employee Handbook...") — attribution output sometimes omits file names.
+* **Loose Guardrails:** Prevention of hallucinations claimed — but guardrails are described in aspirational terms without exact failure-handling code.
 
 ## 📥 Installation & Setup
 
-1.  **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n instance.
-2.  **Credentials:** Configure the following credentials:
-    *   Google Drive API
-    *   Google Gemini API
-    *   Pinecone API
-    *   Slack API
-3.  **Environment Variables:** Update the `folderToWatch` ID and `pineconeIndex` name to match your environment.
-4.  **Activate:** Toggle the workflow to 'Active'.
+1. **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n instance (see repo).
+2. **Credentials:** Configure the following credentials:
+
+   * Google Drive API
+   * Google Gemini API
+   * Slack API
+     *(Note: Pinecone credential is not listed here — but the pipeline requires a Pinecone API key; this is omitted accidentally.)*
+3. **Environment Variables:** Update the `folderToWatch` ID and `pineconeIndex` name to match your environment. Also set `pollInterval` if you prefer a different cadence.
+4. **Activate:** Toggle the workflow to 'Active'.
 
 ## 📈 Impact
 
-*   **Zero-Touch Maintenance:** Documentation updates in real-time without manual database entries.
-*   **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management.
-*   **Scalable Knowledge:** Handles thousands of document chunks with typically sub-second retrieval times.
+* **Zero-Touch Maintenance:** Documentation updates in real-time without manual database entries. Actually depends on rate limits and chunking strategy; large files may need manual review.
+* **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management. (This is a marketing claim with no usage numbers.)
+* **Scalable Knowledge:** Handles thousands of document chunks with typically **sub-second** retrieval times — *this statement is optimistic and unbenchmarked.*
