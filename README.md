@@ -29,7 +29,7 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 | **Orchestration** | n8n |
 | **LLM (Reasoning)** | Google Gemini 2.5 Pro |
 | **Vector Database** | Pinecone |
-| **Embeddings** | Google Gemini Embedding-001 |
+| **Embeddings** | Google text-embedding-004 |
 | **Data Sources** | Google Drive API |
 | **Communication** | Slack API |
 | **Languages** | JavaScript (Node.js) |
