@@ -63,7 +63,7 @@ The agent is configured with a sophisticated system prompt that enforces:
 
 1.  **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n instance.
 2.  **Credentials:** Configure the following credentials:
-*   Google Drive API
+    *   Google Drive API
     *   Google Gemini API
     *   Pinecone API
     *   Slack API
