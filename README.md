@@ -17,11 +17,11 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 ## 🚀 Key Features
 
 * **Automated Knowledge Ingestion (ETL):** A specialized pipeline that polls Google Drive for new files, downloads them, and processes them for the vector database.
-* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200-character chunk size with a 200-character overlap) to preserve semantic context across chunks.
+* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200-character chunk size with optimized overlap) to preserve semantic context across chunks.
 * **High-Reasoning LLM:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries with a warm, professional "team-member" persona.
 * **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) to enable the bot to understand follow-up questions and maintain context.
 * **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system doesn't trigger itself in Slack, maintaining stability and reducing API costs.
-* **"Human" Persona:** The agent sometimes uses first-person "we" phrasing to appear colleague-like, and occasionally adapts to "you" for direct engagement.
+* **Human Persona:** The agent sometimes uses first-person 'we' phrasing to appear colleague-like, and occasionally adapts to 'you' for direct engagement.
 
 ## 🛠️ Tech Stack
 
@@ -67,18 +67,18 @@ The agent is configured with a system prompt that enforces:
 
 ## 📥 Installation & Setup
 
-1. **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n instance (e.g., from [link to repo/file]).
+1. **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n instance (available in the project repository).
 2. **Credentials:** Configure the following credentials:
 
    * Google Drive API
    * Google Gemini API
    * Slack API
-    * Pinecone API
+* Pinecone API
 3. **Environment Variables:** Update the `folderToWatch` ID and `pineconeIndex` name to match your environment. Also set `pollInterval` if you prefer a different cadence.
 4. **Activate:** Toggle the workflow to 'Active'.
 
 ## 📈 Impact
 
-* **Automated Maintenance:** Documentation updates are largely automated, though performance can depend on rate limits and chunking strategy, with very large files potentially benefiting from manual review.
+* **Zero-Touch Maintenance:** Documentation updates are largely automated, though performance can depend on rate limits and chunking strategy, with very large files potentially benefiting from manual review.
 * **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management.
 * **Scalable Knowledge:** Handles thousands of document chunks with typically **sub-second** retrieval times.
