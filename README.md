@@ -4,7 +4,7 @@
 
 By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vector storage, DocuFetch provides a human-like conversational experience, drawing upon institutional memory.
 
-![Process Flow](docufetch-system-architecture.PNG)
+![Process Flow](docufetch-system-architecture.png)
 
 ## 🎥 Demo Video
 
