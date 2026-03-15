@@ -39,7 +39,7 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 The system is divided into two primary loops:
 
 ### 1. The Ingestion Loop (ETL)
-Every minute, the agent "watches" a specific Google Drive folder.
+Every minute, the agent monitors a specific Google Drive folder.
 *   **Trigger:** New file detected in "Office Docs".
 *   **Transform:** Text is extracted and split into optimized segments.
 *   **Embed:** Gemini generates high-dimensional vectors for the text.
@@ -47,7 +47,7 @@ Every minute, the agent "watches" a specific Google Drive folder.
 
 ### 2. The Retrieval Loop (Query)
 When a user sends a message in the `#random` (or designated) Slack channel:
-*   **Filtering:** The "Ignore Bot" node validates the user to prevent loops.
+*   **Filtering:** The "Ignore Bot" node filters out messages originating from the bot itself to prevent loops.
 *   **Reasoning:** The Gemini 2.5 Pro Agent analyzes the intent.
 *   **Retrieval:** The agent calls the `vector_store_retriever` tool to pull relevant facts from Pinecone.
 *   **Response:** A conversational, brand-aligned answer is sent back to Slack.
@@ -64,7 +64,7 @@ The agent is configured with a sophisticated system prompt that enforces:
 1.  **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n instance.
 2.  **Credentials:** Configure the following credentials:
     *   Google Drive OAuth2
-*   Google Gemini API
+    *   Google Gemini API
     *   Pinecone API
     *   Slack API
 3.  **Environment Variables:** Update the `folderToWatch` ID and `pineconeIndex` name to match your environment.
