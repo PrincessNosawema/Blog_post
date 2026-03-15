@@ -17,11 +17,10 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 ## 🚀 Key Features
 
 * **Automated Knowledge Ingestion (ETL):** A specialized pipeline that polls Google Drive for new files, downloads them, and processes them for the vector database.
-* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200-character chunk size with optimized overlap) to preserve semantic context across chunks.
+* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200 characters with a 200-character overlap) to preserve semantic context across chunks.
 * **High-Reasoning LLM:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries with a warm, professional "team-member" persona.
 * **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) to enable the bot to understand follow-up questions and maintain context.
 * **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system doesn't trigger itself in Slack, maintaining stability and reducing API costs.
-* **Human Persona:** The agent sometimes uses first-person 'we' phrasing to appear colleague-like, and occasionally adapts to 'you' for direct engagement.
 
 ## 🛠️ Tech Stack
 
@@ -73,7 +72,7 @@ The agent is configured with a system prompt that enforces:
    * Google Drive API
    * Google Gemini API
    * Slack API
-* Pinecone API
+   * Pinecone API
 3. **Environment Variables:** Update the `folderToWatch` ID and `pineconeIndex` name to match your environment. Also set `pollInterval` if you prefer a different cadence.
 4. **Activate:** Toggle the workflow to 'Active'.
 
