@@ -480,4 +480,82 @@ Assumed American English spelling for 'specialised' and standard straight quotes
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-15T13:33:12.940Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T13:33:11.992Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 24.3s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 2 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 2 |
+| Average confidence (QA Agent) | 95.0% |
+| Operations applied | 2 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+Assumed that the use of emojis in headings and bolding for key terms is an intentional stylistic choice for a blog post. The 'smaller overlap' in chunking (line 20) was considered acceptable for a high-level blog description rather than a technical specification requiring exact numbers. The quotes around 'Human' Persona (line 24) were treated as an intentional stylistic choice for a feature name.
+
+### Issues Found
+
+### Line 51 — 🟢 `low` · `structure` · Confidence: 100% · SVR: ❌
+**Issue:** This blank line creates an unnecessary visual break between the two primary loops, disrupting the flow. Removing it improves the logical grouping of the sections.
+*No direct fix provided.*
+
+### Line 67 — 🟡 `medium` · `readability` · Confidence: 90% · SVR: ❌
+**Issue:** The phrasing 'Prevention of hallucinations is a key design goal, with ongoing improvements to failure-handling mechanisms' is somewhat passive and wordy. Rephrasing it makes it more direct and concise.
+**Agent 1 Suggested Fix:** `* **Hallucination Prevention:** A key design goal, with ongoing improvements to failure-handling mechanisms.`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 51 — 🗑️ `delete`
+**New Text:** *(none)*
+**Rationale:** Agent 1 is confident (Tier 1). Deleting the blank line improves the logical grouping and flow between the 'Ingestion Loop' and 'Retrieval Loop' sections.
+
+#### Line 67 — ✏️ `replace`
+**New Text:** `* **Hallucination Prevention:** A key design goal, with ongoing improvements to failure-handling mec…`
+**Rationale:** Agent 1 is confident (Tier 1). The suggested fix improves readability by making the phrasing more direct and concise.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
