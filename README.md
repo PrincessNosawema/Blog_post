@@ -39,7 +39,7 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 The system is divided into two primary loops:
 
 ### 1. The Ingestion Loop (ETL)
-Every minute, the agent monitors a specific Google Drive folder.
+Every minute, the system monitors a specific Google Drive folder.
 *   **Trigger:** New file detected in "Office Docs".
 *   **Transform:** Text is extracted and split into optimized segments.
 *   **Embed:** Gemini generates high-dimensional vectors for the text.
