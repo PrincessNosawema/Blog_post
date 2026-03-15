@@ -93,3 +93,75 @@ The blog post is intended for a technical audience familiar with RAG, LLMs, vect
 ---
 
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+
+---
+
+## Run — 2026-03-15T03:48:21.232Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T03:47:06.821Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 637.4s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 1 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 1 |
+| Average confidence (QA Agent) | 100.0% |
+| Operations applied | 1 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The use of emojis in headings and the title is an intentional stylistic choice. The level of technical detail, such as '220-character overlap', is appropriate for the target audience of a blog post about an 'Enterprise RAG Agent & ETL Pipeline'.
+
+### Issues Found
+
+### Line 66 — 🟢 `low` · `consistency` · Confidence: 100% · SVR: ❌
+**Issue:** The naming convention for credentials is inconsistent. 'Google Drive OAuth2' specifies the authentication method, while other entries refer to the API name. For consistency with other entries, it should refer to the API name.
+**Agent 1 Suggested Fix:** `*   Google Drive API`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 66 — ✏️ `replace`
+**New Text:** `*   Google Drive API`
+**Rationale:** Agent 1 identified an inconsistency in credential naming. Replaced 'Google Drive OAuth2' with 'Google Drive API' for consistency with other API entries, as per Tier 1 rules (SVR: false, confidence_score: 1).
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
+<!-- next run will append below -->
