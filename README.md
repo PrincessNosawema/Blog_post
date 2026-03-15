@@ -42,7 +42,7 @@ The system is divided into two primary loops:
 Every minute, the system monitors a specific Google Drive folder.
 *   **Trigger:** New file detected in "Office Docs".
 *   **Transform:** Text is extracted and split into optimized segments.
-*   **Embed:** Gemini generates high-dimensional vectors for the text.
+*   **Embed:** Google text-embedding-004 generates high-dimensional vectors for the text.
 *   **Upsert:** Data is stored in the `documentknowledge` Pinecone index.
 
 ### 2. The Retrieval Loop (Query)
