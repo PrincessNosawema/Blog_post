@@ -558,4 +558,90 @@ Assumed that the use of emojis in headings and bolding for key terms is an inten
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-15T14:57:54.773Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T14:55:50.875Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 2669.5s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 3 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 3 |
+| Average confidence (QA Agent) | 90.0% |
+| Operations applied | 3 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The blog post is aimed at a technical audience familiar with RAG concepts and the mentioned technologies. Emojis in headings are an intentional stylistic choice. Bold formatting for key terms is used for emphasis and readability. The level of technical detail provided is appropriate for the target audience.
+
+### Issues Found
+
+### Line 20 — 🟢 `low` · `clarity` · Confidence: 90% · SVR: ❌
+**Issue:** The example for 'overlap' is vague ('smaller overlap'). For an example, it should be concrete to be most helpful.
+**Agent 1 Suggested Fix:** `* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200-character chunk size with a 200-character overlap) to preserve semantic context across chunks.`
+
+### Line 70 — 🟡 `medium` · `clarity` · Confidence: 95% · SVR: ❌
+**Issue:** The instruction 'see repo' is vague for an installation step. A direct link or more specific path to the file within the repository would improve usability.
+**Agent 1 Suggested Fix:** `1. **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n instance (e.g., from [link to repo/file]).`
+
+### Line 82 — 🟡 `medium` · `consistency` · Confidence: 85% · SVR: ❌
+**Issue:** The heading 'Zero-Touch Maintenance' is contradicted by the description 'very large files potentially benefiting from manual review.' This creates an inconsistency in the claim.
+**Agent 1 Suggested Fix:** `* **Automated Maintenance:** Documentation updates are largely automated, though performance can depend on rate limits and chunking strategy, with very large files potentially benefiting from manual review.`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 20 — ✏️ `replace`
+**New Text:** `* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size …`
+**Rationale:** Agent 1 was confident (Tier 1). The suggested fix provides a concrete example for 'overlap', improving clarity as requested. Implemented directly.
+
+#### Line 70 — ✏️ `replace`
+**New Text:** `1. **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n in…`
+**Rationale:** Agent 1 was confident (Tier 1). The suggested fix improves clarity by indicating that a direct link to the file should be provided, making the installation step more actionable. Implemented directly.
+
+#### Line 82 — ✏️ `replace`
+**New Text:** `* **Automated Maintenance:** Documentation updates are largely automated, though performance can dep…`
+**Rationale:** Agent 1 was confident (Tier 1). The suggested fix changes 'Zero-Touch Maintenance' to 'Automated Maintenance', resolving the inconsistency with the subsequent mention of potential manual review. Implemented directly.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
