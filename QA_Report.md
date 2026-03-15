@@ -738,4 +738,90 @@ The blog post is intended for a technically-inclined audience familiar with RAG,
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-15T15:14:41.026Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T15:14:39.285Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 29.5s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 3 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 3 |
+| Average confidence (QA Agent) | 90.0% |
+| Operations applied | 3 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+Assumed the goal is a professional, clear, and concise blog post. Redundancy was flagged where information was better placed or already covered in another section. Markdown formatting errors were treated as grammar/structure issues.
+
+### Issues Found
+
+### Line 20 — 🟡 `medium` · `clarity` · Confidence: 90% · SVR: ❌
+**Issue:** The example for 'optimized overlap' is redundant and vague. Providing a specific overlap value would improve clarity.
+**Agent 1 Suggested Fix:** `* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200 characters with a 200-character overlap) to preserve semantic context across chunks.`
+
+### Line 24 — 🟡 `medium` · `structure` · Confidence: 80% · SVR: ❌
+**Issue:** This feature description is redundant with the 'Internal Awareness' point in the 'Prompt Engineering' section (line 64) and describes implementation details rather than a distinct key feature. It also uses vague terms like 'sometimes' and 'occasionally'.
+*No direct fix provided.*
+
+### Line 76 — 🟢 `low` · `grammar` · Confidence: 100% · SVR: ❌
+**Issue:** The bullet point for 'Pinecone API' is incorrectly indented, breaking the list structure under '2. Credentials:'.
+**Agent 1 Suggested Fix:** `   * Pinecone API`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 20 — ✏️ `replace`
+**New Text:** `* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size …`
+**Rationale:** Agent 1's suggested fix was implemented directly as it improves clarity by providing a specific example for the overlap value, making the description more precise.
+
+#### Line 24 — 🗑️ `delete`
+**New Text:** *(none)*
+**Rationale:** Deleted this line as it was redundant with the 'Internal Awareness' point in the 'Prompt Engineering' section (line 64) and described implementation details rather than a distinct key feature. The description also used vague terms.
+
+#### Line 76 — ✏️ `replace`
+**New Text:** `   * Pinecone API`
+**Rationale:** Corrected the indentation of the 'Pinecone API' bullet point to align with other credentials, fixing the list structure.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
