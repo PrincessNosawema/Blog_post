@@ -75,4 +75,74 @@ The overall tone is intended to be professional yet accessible, suitable for a t
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-15T04:12:19.830Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T04:12:18.810Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 28.8s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 1 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 1 |
+| Average confidence (QA Agent) | 90.0% |
+| Operations applied | 1 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The overall tone is professional and slightly marketing-oriented, which is appropriate for a blog post. Technical jargon is used correctly within its context. Claims regarding performance and user experience are accepted as typical marketing language. Image paths are assumed to be correct. The 'team-member' persona is an intentional design choice.
+
+### Issues Found
+
+### Line 32 — 🟡 `medium` · `factual` · Confidence: 90% · SVR: ❌
+**Issue:** The specified embedding model 'Google Gemini Embedding-001' appears to be an older or legacy model. Given the use of 'Google Gemini 2.5 Pro' for reasoning, it's more likely that a current embedding model like 'Google text-embedding-004' is being used. This could be a factual inaccuracy.
+**Agent 1 Suggested Fix:** `**Embeddings** | Google text-embedding-004`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 32 — ✏️ `replace`
+**New Text:** `| **Embeddings** | Google text-embedding-004 |`
+**Rationale:** Agent 1 identified a factual inaccuracy regarding the embedding model. The suggested fix updates the model to the more current 'Google text-embedding-004', which aligns with the use of Gemini 2.5 Pro for reasoning. This was a Tier 1 issue, implemented directly.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
