@@ -74,4 +74,4 @@ The agent is configured with a system prompt that enforces:
 
 *   **Zero-Touch Maintenance:** Documentation updates in real-time without manual database entries.
 *   **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management.
-*   **Scalable Knowledge:** Handles thousands of document chunks with sub-second retrieval times.
+*   **Scalable Knowledge:** Handles thousands of document chunks with typically sub-second retrieval times.
