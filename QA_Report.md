@@ -63,4 +63,74 @@ The use of emojis in headings is an intentional stylistic choice for a blog post
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-15T04:28:34.476Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T04:28:33.642Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 28.2s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 1 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 1 |
+| Average confidence (QA Agent) | 90.0% |
+| Operations applied | 1 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The document aims for a professional, technical, and consistent style. The content is generally well-structured and clear. The identified issue is a minor stylistic inconsistency in file extension casing.
+
+### Issues Found
+
+### Line 7 — 🟢 `low` · `consistency` · Confidence: 90% · SVR: ❌
+**Issue:** The file extension for the image is uppercase (.PNG), while other image references (e.g., line 15) use lowercase (.png). It's best practice to maintain consistent casing for file extensions.
+**Agent 1 Suggested Fix:** `![Process Flow](docufetch-system-architecture.png)`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 7 — ✏️ `replace`
+**New Text:** `![Process Flow](docufetch-system-architecture.png)`
+**Rationale:** Changed image file extension from .PNG to .png for consistency with other image references in the document, as per Agent 1's confident suggestion (Tier 1).
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
