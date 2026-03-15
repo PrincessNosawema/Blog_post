@@ -164,4 +164,98 @@ The use of emojis in headings and the title is an intentional stylistic choice. 
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-15T03:50:35.727Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T03:50:34.874Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 44.1s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 4 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 4 |
+| Average confidence (QA Agent) | 95.0% |
+| Operations applied | 4 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 1 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The overall tone is appropriate for a technical blog post. Specific product names and bolding for emphasis are assumed to be intentional. The persona description in line 21 is consistent with the prompt engineering details provided later.
+
+### Issues Found
+
+### Line 66 — 🟢 `low` · `structure` · Confidence: 95% · SVR: ❌
+**Issue:** Bulleted list item is not properly indented under the numbered list item, affecting readability and hierarchical structure.
+**Agent 1 Suggested Fix:** `    *   Google Drive API`
+
+### Line 67 — 🟢 `low` · `structure` · Confidence: 95% · SVR: ❌
+**Issue:** Bulleted list item is not properly indented under the numbered list item, affecting readability and hierarchical structure.
+**Agent 1 Suggested Fix:** `    *   Google Gemini API`
+
+### Line 68 — 🟢 `low` · `structure` · Confidence: 95% · SVR: ❌
+**Issue:** Bulleted list item is not properly indented under the numbered list item, affecting readability and hierarchical structure.
+**Agent 1 Suggested Fix:** `    *   Pinecone API`
+
+### Line 69 — 🟢 `low` · `structure` · Confidence: 95% · SVR: ❌
+**Issue:** Bulleted list item is not properly indented under the numbered list item, affecting readability and hierarchical structure.
+**Agent 1 Suggested Fix:** `    *   Slack API`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 66 — ✏️ `replace`
+**New Text:** `    *   Google Drive API`
+**Rationale:** Agent 1 is confident. Implemented the suggested fix to correct indentation for the bulleted list item under the 'Credentials' section, improving readability and hierarchical structure.
+
+#### Line 67 — ✏️ `replace`
+**New Text:** `    *   Google Gemini API`
+**Rationale:** Agent 1 is confident. Implemented the suggested fix to correct indentation for the bulleted list item under the 'Credentials' section, improving readability and hierarchical structure.
+
+#### Line 68 — ✏️ `replace`
+**New Text:** `    *   Pinecone API`
+**Rationale:** Agent 1 is confident. Implemented the suggested fix to correct indentation for the bulleted list item under the 'Credentials' section, improving readability and hierarchical structure.
+
+#### Line 69 — ✏️ `replace`
+**New Text:** `    *   Slack API`
+**Rationale:** Agent 1 is confident. Implemented the suggested fix to correct indentation for the bulleted list item under the 'Credentials' section, improving readability and hierarchical structure.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
