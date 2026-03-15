@@ -48,7 +48,6 @@ Every **60 seconds**, the system monitors a specific Google Drive folder.
 * **Embed:** Google text-embedding-004 generates high-dimensional vectors for the text.
 * **Upsert:** Data is stored in the `documentknowledge` Pinecone index.
 
-
 ### 2. The Retrieval Loop (Query)
 
 When a user sends a message in the `#random` (or designated) Slack channel:
@@ -64,7 +63,7 @@ The agent is configured with a system prompt that enforces:
 
 * **Internal Awareness:** The bot speaks as a company employee (e.g., "We have..." instead of "The company has...").
 * **Source Attribution:** Naturally citing documents (e.g., "According to the Employee Handbook...").
-* **Hallucination Prevention:** Prevention of hallucinations is a key design goal, with ongoing improvements to failure-handling mechanisms.
+* **Hallucination Prevention:** A key design goal, with ongoing improvements to failure-handling mechanisms.
 
 ## 📥 Installation & Setup
 
