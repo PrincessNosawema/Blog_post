@@ -644,4 +644,98 @@ The blog post is aimed at a technical audience familiar with RAG concepts and th
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-15T15:12:29.334Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T15:12:27.517Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 3666.2s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 4 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 4 |
+| Average confidence (QA Agent) | 91.3% |
+| Operations applied | 4 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The blog post is intended for a technically-inclined audience familiar with RAG, LLMs, and n8n. Emojis in headings are an intentional stylistic choice. Bold formatting for key terms and feature names is intentional.
+
+### Issues Found
+
+### Line 20 — 🟡 `medium` · `clarity` · Confidence: 90% · SVR: ❌
+**Issue:** The term 'Recursive Character Text Splitter' should be capitalized as it refers to a specific technical component or algorithm. 'Smaller overlap' is vague; 'optimized overlap' or a specific value would be clearer.
+**Agent 1 Suggested Fix:** `* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200-character chunk size with optimized overlap) to preserve semantic context across chunks.`
+
+### Line 24 — 🟢 `low` · `consistency` · Confidence: 95% · SVR: ❌
+**Issue:** The quotation marks around 'Human' Persona are inconsistent with the formatting of other feature names in the list, which are bolded without quotes.
+**Agent 1 Suggested Fix:** `* **Human Persona:** The agent sometimes uses first-person 'we' phrasing to appear colleague-like, and occasionally adapts to 'you' for direct engagement.`
+
+### Line 70 — 🟡 `medium` · `clarity` · Confidence: 85% · SVR: ❌
+**Issue:** The instruction 'see repo' is vague for installation steps. It should specify where in the repository the file can be found or provide a direct link for better user experience.
+**Agent 1 Suggested Fix:** `1. **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n instance (available in the project repository).`
+
+### Line 76 — 🟢 `low` · `grammar` · Confidence: 95% · SVR: ❌
+**Issue:** This list item has an inconsistent leading space before the asterisk, affecting Markdown rendering consistency.
+**Agent 1 Suggested Fix:** `* Pinecone API`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 20 — ✏️ `replace`
+**New Text:** `* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size …`
+**Rationale:** Agent 1's suggestion correctly capitalizes the technical term 'Recursive Character Text Splitter' and improves clarity by changing 'smaller overlap' to 'optimized overlap,' aligning with Tier 1 rules.
+
+#### Line 24 — ✏️ `replace`
+**New Text:** `* **Human Persona:** The agent sometimes uses first-person 'we' phrasing to appear colleague-like, a…`
+**Rationale:** Agent 1's suggestion correctly removes inconsistent quotation marks from the feature name 'Human Persona' to match the formatting of other feature titles, aligning with Tier 1 rules.
+
+#### Line 70 — ✏️ `replace`
+**New Text:** `1. **Import to n8n:** Download the `DocuFetch_Company_RAG_Agent.json` and import it into your n8n in…`
+**Rationale:** Agent 1's suggestion improves clarity by specifying 'available in the project repository' instead of the vague 'see repo' for installation instructions, aligning with Tier 1 rules.
+
+#### Line 76 — ✏️ `replace`
+**New Text:** `* Pinecone API`
+**Rationale:** Agent 1's suggestion correctly removes the inconsistent leading spaces before the asterisk to ensure proper Markdown list formatting, aligning with Tier 1 rules.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
