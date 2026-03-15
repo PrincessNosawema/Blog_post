@@ -362,4 +362,122 @@ The document is intended as a public-facing blog post, requiring a professional 
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-15T13:00:02.185Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-15T13:00:01.206Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 38.6s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 7 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 7 |
+| Average confidence (QA Agent) | 95.7% |
+| Operations applied | 7 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+Assumed American English spelling for 'specialised' and standard straight quotes for Markdown consistency. The editorial note on line 77 was treated as an unintentional inclusion and factual inconsistency.
+
+### Issues Found
+
+### Line 19 — 🟢 `low` · `grammar` · Confidence: 100% · SVR: ❌
+**Issue:** Inconsistent spelling; 'specialised' is British English, while 'specialized' is American English. Standardize to American English for a broader technical audience.
+**Agent 1 Suggested Fix:** `* **Automated Knowledge Ingestion (ETL):** A specialized pipeline that polls Google Drive for new files, downloads them, and processes them for the vector database.`
+
+### Line 20 — 🟢 `low` · `readability` · Confidence: 90% · SVR: ❌
+**Issue:** 'Utilizes' can often be replaced with 'Uses' for more concise and direct language, improving readability.
+**Agent 1 Suggested Fix:** `* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200-character chunk size with a smaller overlap) to preserve semantic context across chunks.`
+
+### Line 22 — 🟢 `low` · `readability` · Confidence: 90% · SVR: ❌
+**Issue:** Repetitive use of 'enabling' (also on line 21). Rephrasing improves sentence flow and avoids redundancy.
+**Agent 1 Suggested Fix:** `* **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) to enable the bot to understand follow-up questions and maintain context.`
+
+### Line 24 — 🟢 `low` · `grammar` · Confidence: 100% · SVR: ❌
+**Issue:** Inconsistent use of curly quotes (`“ ”`) instead of straight quotes (`" "`). Standardize to straight quotes for Markdown consistency.
+**Agent 1 Suggested Fix:** `* **"Human" Persona:** The agent sometimes uses first-person "we" phrasing to appear colleague-like, and occasionally adapts to "you" for direct engagement.`
+
+### Line 47 — 🟢 `low` · `grammar` · Confidence: 100% · SVR: ❌
+**Issue:** Inconsistent use of curly quotes (`“ ”`) instead of straight quotes (`" "`). Standardize to straight quotes for Markdown consistency.
+**Agent 1 Suggested Fix:** `* **Transform:** Text is extracted and split into optimized segments (see "Advanced Text Chunking").`
+
+### Line 67 — 🟡 `medium` · `clarity` · Confidence: 90% · SVR: ❌
+**Issue:** The heading 'Loose Guardrails' is informal and less precise than a more direct description of the feature, such as 'Hallucination Prevention.'
+**Agent 1 Suggested Fix:** `* **Hallucination Prevention:** Prevention of hallucinations is a key design goal, with ongoing improvements to failure-handling mechanisms.`
+
+### Line 77 — 🔴 `high` · `consistency` · Confidence: 100% · SVR: ❌
+**Issue:** This line is an internal editorial note that should not be present in the final blog post. It also creates an immediate factual inconsistency by stating Pinecone credentials are 'omitted accidentally' when they are listed on the very next line (line 78).
+*No direct fix provided.*
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 19 — ✏️ `replace`
+**New Text:** `* **Automated Knowledge Ingestion (ETL):** A specialized pipeline that polls Google Drive for new fi…`
+**Rationale:** Standardized spelling to American English 'specialized' for consistency.
+
+#### Line 20 — ✏️ `replace`
+**New Text:** `* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size …`
+**Rationale:** Replaced 'Utilizes' with 'Uses' for conciseness and improved readability.
+
+#### Line 22 — ✏️ `replace`
+**New Text:** `* **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) to enable t…`
+**Rationale:** Rephrased to avoid repetitive use of 'enabling' and improve sentence flow.
+
+#### Line 24 — ✏️ `replace`
+**New Text:** `* **"Human" Persona:** The agent sometimes uses first-person "we" phrasing to appear colleague-like,…`
+**Rationale:** Standardized curly quotes to straight quotes for Markdown consistency.
+
+#### Line 47 — ✏️ `replace`
+**New Text:** `* **Transform:** Text is extracted and split into optimized segments (see "Advanced Text Chunking").`
+**Rationale:** Standardized curly quotes to straight quotes for Markdown consistency.
+
+#### Line 67 — ✏️ `replace`
+**New Text:** `* **Hallucination Prevention:** Prevention of hallucinations is a key design goal, with ongoing impr…`
+**Rationale:** Replaced 'Loose Guardrails' with 'Hallucination Prevention' for improved clarity and precision.
+
+#### Line 77 — 🗑️ `delete`
+**New Text:** *(none)*
+**Rationale:** Removed an internal editorial note that was inconsistent with the surrounding text and should not be in the final document.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
