@@ -50,11 +50,11 @@ When a user sends a message in the `#random` (or designated) Slack channel:
 *   **Filtering:** The "Ignore Bot" node filters out messages originating from the bot itself to prevent loops.
 *   **Reasoning:** The Gemini 2.5 Pro Agent analyzes the intent.
 *   **Retrieval:** The agent calls the `vector_store_retriever` tool to pull relevant facts from Pinecone.
-*   **Response:** A conversational, brand-aligned answer is sent back to Slack.
+*   **Response:** A conversational, brand-consistent answer is sent back to Slack.
 
 ## 🧠 Prompt Engineering
 
-The agent is configured with a sophisticated system prompt that enforces:
+The agent is configured with a system prompt that enforces:
 *   **Internal Awareness:** The bot speaks as a company employee (e.g., "We have..." instead of "The company has...").
 *   **Source Attribution:** Naturally citing documents (e.g., "According to the Employee Handbook...").
 *   **Strict Guardrails:** Prevention of hallucinations by strictly limiting answers to the provided knowledge base.
