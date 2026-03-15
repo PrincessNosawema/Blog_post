@@ -18,7 +18,7 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 
 * **Automated Knowledge Ingestion (ETL):** A specialized pipeline that polls Google Drive for new files, downloads them, and processes them for the vector database.
 * **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200 characters with a 200-character overlap) to preserve semantic context across chunks.
-* **High-Reasoning LLM:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries with a warm, professional "team-member" persona.
+* **High-Reasoning LLM:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries effectively.
 * **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) to enable the bot to understand follow-up questions and maintain context.
 * **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system doesn't trigger itself in Slack, maintaining stability and reducing API costs.
 
@@ -78,6 +78,6 @@ The agent is configured with a system prompt that enforces:
 
 ## 📈 Impact
 
-* **Zero-Touch Maintenance:** Documentation updates are largely automated, though performance can depend on rate limits and chunking strategy, with very large files potentially benefiting from manual review.
+* **Automated Maintenance:** Documentation updates are largely automated. Performance can depend on rate limits and chunking strategy, and very large files may benefit from manual review.
 * **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management.
 * **Scalable Knowledge:** Handles thousands of document chunks with typically **sub-second** retrieval times.
