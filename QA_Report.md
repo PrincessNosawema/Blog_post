@@ -972,4 +972,82 @@ The technical terms and product names are used correctly and are appropriate for
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-16T09:32:28.469Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-16T09:32:26.660Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 29.4s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 2 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 2 |
+| Average confidence (QA Agent) | 87.5% |
+| Operations applied | 2 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The overall tone is professional and informative, which was maintained in suggested fixes. Technical terms are used correctly. The provided image and video links are assumed to be valid and correctly referenced.
+
+### Issues Found
+
+### Line 65 — 🟡 `medium` · `readability` · Confidence: 90% · SVR: ❌
+**Issue:** The phrasing 'A key design goal, with ongoing improvements to failure-handling mechanisms.' is slightly clunky and could be clearer about the relationship between the goal and the improvements.
+**Agent 1 Suggested Fix:** `* **Hallucination Prevention:** A key design goal, supported by ongoing improvements to failure-handling mechanisms.`
+
+### Line 81 — 🟡 `medium` · `readability` · Confidence: 85% · SVR: ❌
+**Issue:** The sentence is quite long and combines two distinct ideas (performance factors and manual review for large files) with a single 'and', which can make it slightly harder to parse.
+**Agent 1 Suggested Fix:** `* **Automated Maintenance:** Documentation updates are largely automated. Performance, however, can be influenced by rate limits and chunking strategy, and very large files may still benefit from manual review.`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 65 — ✏️ `replace`
+**New Text:** `* **Hallucination Prevention:** A key design goal, supported by ongoing improvements to failure-hand…`
+**Rationale:** Tier 1: Agent 1's suggested fix was clear and improved the phrasing by clarifying the relationship between the design goal and the improvements.
+
+#### Line 81 — ✏️ `replace`
+**New Text:** `* **Automated Maintenance:** Documentation updates are largely automated. Performance, however, can …`
+**Rationale:** Tier 1: Agent 1's suggested fix improved readability by restructuring the sentence to separate distinct ideas and enhance flow.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
