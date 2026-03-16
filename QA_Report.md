@@ -1284,4 +1284,68 @@ The content is generally well-structured and uses appropriate technical terminol
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-16T21:26:25.060Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-16T21:26:24.093Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 23.0s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 0 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 0 |
+| Average confidence (QA Agent) | N/A |
+| Operations applied | 0 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The content is well-structured, clear, and uses appropriate technical terminology. The tone is professional and direct, suitable for a B2B practitioner audience. No significant issues regarding tone, clarity, grammar, structure, factual accuracy, or readability were identified based on the provided criteria.
+
+### Issues Found
+
+*No issues identified.*
+
+---
+
+## Editor Agent Decisions
+
+*No edits applied.*
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
