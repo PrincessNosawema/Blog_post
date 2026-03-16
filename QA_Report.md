@@ -1214,4 +1214,74 @@ The content is a technical overview for a B2B audience familiar with RAG and ETL
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-16T21:21:04.131Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-16T21:21:02.311Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 30.2s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 1 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 1 |
+| Average confidence (QA Agent) | 90.0% |
+| Operations applied | 1 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The content is generally well-structured and uses appropriate technical terminology for the target B2B audience. The tone is professional and informative. The primary goal was to identify areas for enhanced clarity and conciseness, particularly in conveying practical implications.
+
+### Issues Found
+
+### Line 81 — 🟡 `medium` · `clarity` · Confidence: 90% · SVR: ❌
+**Issue:** The sentence is a bit long and combines several ideas, making it slightly less direct. The phrase 'predominantly automated' could be more precise, and the mention of 'performance can be influenced' is generic. Rephrasing can improve conciseness and provide more actionable context for the user.
+**Agent 1 Suggested Fix:** `* **Automated Maintenance:** Documentation updates are largely automated. However, very large files may still benefit from manual review, particularly for optimizing chunking strategy and managing potential rate limits.`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 81 — ✏️ `replace`
+**New Text:** `* **Automated Maintenance:** Documentation updates are largely automated. However, very large files …`
+**Rationale:** Tier 1 issue. Agent 1's suggested fix improves clarity and conciseness by splitting the sentence and rephrasing the conditions for manual review, aligning with the B2B practitioner voice.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
