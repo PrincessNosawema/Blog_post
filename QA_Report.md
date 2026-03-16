@@ -902,4 +902,74 @@ The blog post aims for a professional, technical tone. I've assumed that specifi
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-16T09:10:26.003Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-16T09:10:24.362Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 30.2s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 1 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 1 |
+| Average confidence (QA Agent) | 90.0% |
+| Operations applied | 1 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The technical terms and product names are used correctly and are appropriate for the target audience. The use of emojis in headings is an intentional stylistic choice for a blog post. Image paths and links are assumed to be valid.
+
+### Issues Found
+
+### Line 81 — 🟢 `low` · `readability` · Confidence: 90% · SVR: ❌
+**Issue:** The sentence structure is a bit disjointed, making the flow less smooth. The second part introduces caveats that could be better integrated or transitioned.
+**Agent 1 Suggested Fix:** `* **Automated Maintenance:** Documentation updates are largely automated. However, performance can be influenced by rate limits and chunking strategy, and very large files might still benefit from manual review.`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 81 — ✏️ `replace`
+**New Text:** `* **Automated Maintenance:** Documentation updates are largely automated. However, performance can b…`
+**Rationale:** Agent 1's suggested fix improves readability and flow by adding a transition word and rephrasing the caveats, aligning with Tier 1 rules (SVR: false, confidence_score >= 0.7).
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
