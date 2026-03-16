@@ -1050,4 +1050,74 @@ The overall tone is professional and informative, which was maintained in sugges
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-16T10:14:46.006Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-16T10:14:44.411Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 41.8s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 1 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 1 |
+| Average confidence (QA Agent) | 90.0% |
+| Operations applied | 1 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent retries | 0 |
+| Editor Agent retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The use of emojis in headings and bolding of key terms are intentional stylistic choices appropriate for a blog post. The level of technical detail is suitable for the target audience. Backticks for technical terms are used correctly.
+
+### Issues Found
+
+### Line 81 — 🟢 `low` · `readability` · Confidence: 90% · SVR: ❌
+**Issue:** The sentence is long and contains multiple clauses connected by 'however' and 'and', which can make it slightly dense. Rephrasing can improve flow and readability.
+**Agent 1 Suggested Fix:** `* **Automated Maintenance:** Documentation updates are largely automated, though performance can be influenced by rate limits and chunking strategy. Very large files may still benefit from manual review.`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 81 — ✏️ `replace`
+**New Text:** `* **Automated Maintenance:** Documentation updates are largely automated, though performance can be …`
+**Rationale:** Tier 1 issue. Agent 1's suggested fix directly addresses the readability concern by rephrasing the long sentence into two clearer parts, improving flow and reducing density.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
