@@ -54,7 +54,7 @@ When a user sends a message in the `#random` (or designated) Slack channel:
 * **Filtering:** The "Ignore Bot" node filters out messages originating from the bot itself to prevent loops.
 * **Reasoning:** The Gemini 2.5 Pro Agent analyzes the intent.
 * **Retrieval:** The agent calls the `vector_store_retriever` tool to pull relevant facts from Pinecone.
-* **Response:** A conversational, brand-consistent answer is sent back to Slack.
+* **Response:** A conversational, brand-consistent answer is sent back to Slack, leveraging the internal awareness prompt.
 
 ## 🧠 Prompt Engineering
 
@@ -62,7 +62,7 @@ The agent is configured with a system prompt that enforces:
 
 * **Internal Awareness:** The bot speaks as a company employee (e.g., "We have..." instead of "The company has...").
 * **Source Attribution:** Naturally citing documents (e.g., "According to the Employee Handbook...").
-* **Hallucination Prevention:** A key design goal, supported by ongoing improvements to failure-handling mechanisms.
+* **Hallucination Prevention:** A key design goal, supported by robust failure-handling mechanisms and continuous refinement.
 
 ## 📥 Installation & Setup
 
@@ -78,6 +78,6 @@ The agent is configured with a system prompt that enforces:
 
 ## 📈 Impact
 
-* **Automated Maintenance:** Documentation updates are largely automated, though performance can be influenced by rate limits and chunking strategy. Very large files may still benefit from manual review.
+* **Automated Maintenance:** Documentation updates are predominantly automated, though performance can be influenced by rate limits and chunking strategy. Very large files may still benefit from manual review.
 * **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management.
-* **Scalable Knowledge:** Handles thousands of document chunks with typically **sub-second** retrieval times.
+* **Scalable Knowledge:** Handles tens of thousands of document chunks with typically **sub-second** retrieval times.
