@@ -1,4 +1,4 @@
-## 📂 DocuFetch: Enterprise RAG Agent & ETL Pipeline
+# 📂 DocuFetch: Enterprise RAG Agent & ETL Pipeline
 
 **DocuFetch** is a high-performance Retrieval-Augmented Generation (RAG) system built on **n8n**. It automates the entire lifecycle of company knowledge—from the moment a document is dropped into **Google Drive** to the moment an employee asks a complex question in **Slack**.
 
@@ -78,6 +78,6 @@ The agent is configured with a system prompt that enforces:
 
 ## 📈 Impact
 
-Documentation updates are predominantly automated. For very large files, manual review may still be beneficial, especially for refining the chunking strategy and managing potential rate limits.
+Documentation updates are predominantly automated, significantly reducing manual effort. For exceptionally large files, a manual review may still be beneficial to refine the chunking strategy and manage potential rate limits.
 * **Reduced Slack Channel Clutter:** Employees get instant answers to policy questions without tagging HR/Management.
 * **Scalable Knowledge:** Handles over 10,000 document chunks with typically **sub-second** retrieval times.
