@@ -20,7 +20,7 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 * **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200 characters with a 200-character overlap) to preserve semantic context across chunks.
 * **Powerful LLM for Complex Queries:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries effectively.
 * **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) to enable the bot to understand follow-up questions and maintain context.
-* **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system doesn't trigger itself in Slack, maintaining stability and reducing API costs.
+* **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system does not trigger itself in Slack, maintaining stability and reducing API costs.
 
 ## 🛠️ Tech Stack
 
