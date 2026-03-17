@@ -1,4 +1,4 @@
-# 📂 DocuFetch: Enterprise RAG Agent & ETL Pipeline
+## 📂 DocuFetch: Enterprise RAG Agent & ETL Pipeline
 
 **DocuFetch** is a high-performance Retrieval-Augmented Generation (RAG) system built on **n8n**. It automates the entire lifecycle of company knowledge—from the moment a document is dropped into **Google Drive** to the moment an employee asks a complex question in **Slack**.
 
