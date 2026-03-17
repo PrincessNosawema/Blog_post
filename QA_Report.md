@@ -1348,4 +1348,74 @@ The content is well-structured, clear, and uses appropriate technical terminolog
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-17T11:05:59.952Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-17T11:05:58.136Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 34.1s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 1 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 1 |
+| Average confidence (QA Agent) | 85.0% |
+| Operations applied | 1 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent loop retries | 0 |
+| Editor Agent loop retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The content is a technical overview/marketing page for a RAG system. The use of emojis in headings and the title is considered an intentional stylistic choice common in developer-focused or internal documentation, and acceptable for this B2B context. The terminology used is appropriate for an audience familiar with AI/ML and data engineering concepts.
+
+### Issues Found
+
+### Line 81 — 🟢 `low` · `readability` · Confidence: 85% · SVR: ❌
+**Issue:** The sentence is slightly long and dense, which can hinder quick comprehension for a B2B audience. Rephrasing can improve clarity and flow.
+**Agent 1 Suggested Fix:** `* **Automated Maintenance:** Documentation updates are largely automated. For very large files, however, manual review may be beneficial, especially for optimizing chunking strategy and managing potential rate limits.`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 81 — ✏️ `replace`
+**New Text:** `* **Automated Maintenance:** Documentation updates are largely automated. For very large files, howe…`
+**Rationale:** Tier 1 issue. Agent 1's suggested fix improves readability and flow by rephrasing a dense sentence, making it more direct for a B2B audience. The change maintains the practitioner voice.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
