@@ -17,8 +17,8 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 ## 🚀 Key Features
 
 * **Automated Knowledge Ingestion (ETL):** A specialized pipeline that polls Google Drive for new files, downloads them, and processes them for the vector database.
-* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200 characters with a 200-character overlap) to preserve semantic context across chunks.
-* **Powerful LLM for Complex Queries:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries effectively.
+* **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with a carefully selected chunk size and overlap (e.g., 2200 characters with a 200-character overlap) to preserve semantic context across chunks.
+* **LLM for Complex Queries:** Utilizes Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries.
 * **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) to enable the bot to understand follow-up questions and maintain context.
 * **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system does not trigger itself in Slack, maintaining stability and reducing API costs.
 
@@ -43,7 +43,7 @@ The system is divided into two primary loops:
 Every **60 seconds**, the system monitors a specific Google Drive folder.
 
 * **Trigger:** New file detected in "Office Docs".
-* **Transform:** Text is extracted and split into optimized segments (see "Advanced Text Chunking").
+* **Transform:** Text is extracted and split into configured segments (see "Advanced Text Chunking").
 * **Embed:** Google text-embedding-004 generates high-dimensional vectors for the text.
 * **Upsert:** Data is stored in the `documentknowledge` Pinecone index.
 
@@ -61,8 +61,8 @@ When a user sends a message in the `#random` (or designated) Slack channel:
 The agent is configured with a system prompt that enforces:
 
 * **Internal Awareness:** The bot speaks as a company employee (e.g., "We have..." instead of "The company has...").
-* **Source Attribution:** Naturally citing documents (e.g., "According to the Employee Handbook...").
-* **Hallucination Prevention:** A key design goal, supported by iterative prompt refinement and a focus on grounding responses in retrieved documents.
+* **Source Attribution:** Clearly citing documents (e.g., "According to the Employee Handbook...").
+* **Hallucination Prevention:** A core design principle, achieved through iterative prompt refinement and grounding responses in retrieved documents.
 
 ## 📥 Installation & Setup
 
@@ -73,11 +73,11 @@ The agent is configured with a system prompt that enforces:
    * Google Gemini API
    * Slack API
    * Pinecone API
-3. **Environment Variables:** Update the `folderToWatch` ID and `pineconeIndex` name to match your environment. Also set `pollInterval` if you prefer a different cadence.
+3. **Environment Variables:** Update the `folderToWatch` ID and `pineconeIndex` name to match your environment. Also set `pollInterval` to adjust the polling frequency.
 4. **Activate:** Toggle the workflow to 'Active'.
 
 ## 📈 Impact
 
-* **Automated Maintenance:** Documentation updates are largely automated. However, very large files may still benefit from manual review, particularly for optimizing chunking strategy and managing potential rate limits.
-* **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management.
+* **Automated Maintenance:** Documentation updates are largely automated. However, very large files may still benefit from manual review, particularly for refining the chunking strategy and managing potential rate limits.
+* **Reduced Slack Channel Clutter:** Employees get instant answers to policy questions without tagging HR/Management.
 * **Scalable Knowledge:** Handles over 10,000 document chunks with typically **sub-second** retrieval times.
