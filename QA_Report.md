@@ -1,4 +1,4 @@
-# QA Report — `README.md`
+## QA Report — `README.md`
 
 > **Generated:** 2026-03-17T11:17:37.607Z
 > **File:** `README.md` on branch `main`
