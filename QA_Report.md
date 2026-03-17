@@ -1418,4 +1418,74 @@ The content is a technical overview/marketing page for a RAG system. The use of 
 *Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
 
 ---
+
+---
+
+## Run — 2026-03-17T11:13:16.287Z
+
+# QA Report — `README.md`
+
+> **Generated:** 2026-03-17T11:13:14.509Z
+> **File:** `README.md` on branch `main`
+> **Pipeline duration:** 26.1s
+
+---
+
+## Summary
+
+✅ **Patch applied.** 1 operation(s) applied.
+
+| Metric | Value |
+|---|---|
+| Issues identified by QA Agent | 1 |
+| Average confidence (QA Agent) | 95.0% |
+| Operations applied | 1 |
+| Lines skipped by Editor Agent (Tier 3) | 0 |
+| Runtime ops failed | 0 |
+| QA Agent loop retries | 0 |
+| Editor Agent loop retries | 0 |
+
+---
+
+## QA Agent Analysis
+
+### Assumptions
+
+The content is a technical overview/marketing page for a SaaS product. The overall tone is professional and informative, aiming for clarity and precision. The identified issue is a minor stylistic improvement to align more closely with the expectations of a B2B practitioner audience.
+
+### Issues Found
+
+### Line 23 — 🟢 `low` · `tone` · Confidence: 95% · SVR: ❌
+**Issue:** The contraction 'doesn't' is generally considered too informal for a B2B technical audience. 'Does not' is more appropriate for maintaining a professional and authoritative tone.
+**Agent 1 Suggested Fix:** `* **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system does not trigger itself in Slack, maintaining stability and reducing API costs.`
+
+
+---
+
+## Editor Agent Decisions
+
+#### Line 23 — ✏️ `replace`
+**New Text:** `* **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system does not trigger itself i…`
+**Rationale:** Tier 1: Replaced informal contraction 'doesn't' with 'does not' for a more professional B2B tone, as suggested by Agent 1.
+
+
+---
+
+## Tier 3 Lines Skipped by Editor Agent
+
+*Lines with confidence < 0.6 where Agent 2 could not find a suitable alternative.*
+
+*None — Agent 2 found fixes for all verified lines.*
+
+---
+
+## Runtime Skipped Operations
+
+*None.*
+
+---
+
+*Generated automatically by the n8n Two-Agent Blog QA & Auto-Patch workflow.*
+
+---
 <!-- next run will append below -->
