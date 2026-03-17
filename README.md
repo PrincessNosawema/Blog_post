@@ -78,6 +78,6 @@ The agent is configured with a system prompt that enforces:
 
 ## 📈 Impact
 
-* **Automated Maintenance:** Documentation updates are largely automated. However, very large files may still benefit from manual review, particularly for optimizing chunking strategy and managing potential rate limits.
+* **Automated Maintenance:** Documentation updates are largely automated. For very large files, however, manual review may be beneficial, especially for optimizing chunking strategy and managing potential rate limits.
 * **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management.
 * **Scalable Knowledge:** Handles tens of thousands of document chunks with typically **sub-second** retrieval times.
