@@ -2,7 +2,7 @@
 
 **DocuFetch** is a high-performance Retrieval-Augmented Generation (RAG) system built on **n8n**. It automates the entire lifecycle of company knowledge—from the moment a document is dropped into **Google Drive** to the moment an employee asks a complex question in **Slack**.
 
-By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vector storage, DocuFetch provides a human-like conversational experience, drawing upon institutional memory.
+By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vector storage, DocuFetch provides a natural conversational experience, drawing upon institutional memory.
 
 ![Process Flow](docufetch-system-architecture.png)
 
@@ -18,7 +18,7 @@ By leveraging **Google Gemini 2.5 Pro** for reasoning and **Pinecone** for vecto
 
 * **Automated Knowledge Ingestion (ETL):** A specialized pipeline that polls Google Drive for new files, downloads them, and processes them for the vector database.
 * **Advanced Text Chunking:** Uses a Recursive Character Text Splitter with an optimized chunk size and overlap (e.g., 2200 characters with a 200-character overlap) to preserve semantic context across chunks.
-* **High-Reasoning LLM:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries effectively.
+* **Powerful LLM for Complex Queries:** Powered by Google Gemini 2.5 Pro, enabling the agent to handle nuanced internal queries effectively.
 * **Conversational Memory:** Implements a Window Buffer Memory (last **4** interactions) to enable the bot to understand follow-up questions and maintain context.
 * **Loop Prevention Logic:** A custom "Ignore Bot" gate ensures the system doesn't trigger itself in Slack, maintaining stability and reducing API costs.
 
@@ -54,7 +54,7 @@ When a user sends a message in the `#random` (or designated) Slack channel:
 * **Filtering:** The "Ignore Bot" node filters out messages originating from the bot itself to prevent loops.
 * **Reasoning:** The Gemini 2.5 Pro Agent analyzes the intent.
 * **Retrieval:** The agent calls the `vector_store_retriever` tool to pull relevant facts from Pinecone.
-* **Response:** A conversational, brand-consistent answer is sent back to Slack, leveraging the internal awareness prompt.
+* **Response:** A conversational answer, aligned with the internal awareness prompt, is sent back to Slack.
 
 ## 🧠 Prompt Engineering
 
@@ -62,7 +62,7 @@ The agent is configured with a system prompt that enforces:
 
 * **Internal Awareness:** The bot speaks as a company employee (e.g., "We have..." instead of "The company has...").
 * **Source Attribution:** Naturally citing documents (e.g., "According to the Employee Handbook...").
-* **Hallucination Prevention:** A key design goal, supported by robust failure-handling mechanisms and continuous refinement.
+* **Hallucination Prevention:** A key design goal, supported by iterative prompt refinement and a focus on grounding responses in retrieved documents.
 
 ## 📥 Installation & Setup
 
@@ -78,6 +78,6 @@ The agent is configured with a system prompt that enforces:
 
 ## 📈 Impact
 
-* **Automated Maintenance:** Documentation updates are largely automated. For very large files, however, manual review may be beneficial, especially for optimizing chunking strategy and managing potential rate limits.
+* **Automated Maintenance:** Documentation updates are largely automated. However, very large files may still benefit from manual review, particularly for optimizing chunking strategy and managing potential rate limits.
 * **Reduced Slack Noise:** Employees get instant answers to policy questions without tagging HR/Management.
-* **Scalable Knowledge:** Handles tens of thousands of document chunks with typically **sub-second** retrieval times.
+* **Scalable Knowledge:** Handles over 10,000 document chunks with typically **sub-second** retrieval times.
